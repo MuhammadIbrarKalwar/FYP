@@ -36,6 +36,7 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        //send line
         cardRecommendation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
