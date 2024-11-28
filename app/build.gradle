@@ -1,0 +1,64 @@
+plugins {
+    alias(libs.plugins.android.application)// Ensures plugins are aligned with the libs file configuration
+
+}
+
+android {
+    namespace 'com.example.fyp'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.example.fyp"
+        minSdk 25
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    // Excluding conflict files found in MongoDB libraries
+    packagingOptions {
+        exclude 'META-INF/native-image/reflect-config.json'
+        exclude 'META-INF/native-image/native-image.properties'
+    }
+}
+
+dependencies {
+    implementation libs.appcompat
+    implementation libs.material
+    implementation libs.activity
+    implementation libs.constraintlayout
+    implementation libs.support.annotations
+    implementation libs.gridlayout
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
+
+    // Ensure local libraries in the 'libs' folder are included
+    //implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // Realm dependency from the local JAR (since it's being used locally)
+    //implementation libs.realm.gradle.plugin  // Change version if you’re using a different one
+
+    //implementation libs.mongodb.atlas.sdk // VERSION ko latest se replace karein
+    //implementation 'org.mongodb:mongodb-atlas-sdk-android:latest-version'
+
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+
+}
+

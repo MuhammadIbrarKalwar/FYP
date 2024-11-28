@@ -1,0 +1,65 @@
+<!-- res/values/strings.xml -->
+<resources>
+    <string name="app_name" translatable="false">SDRS</string>
+    <string name="signup_title" translatable="false">Sign Up</string>
+    <string name="hint_full_name" translatable="false">Full Name</string>
+    <string name="hint_email" translatable="false">Email</string>
+    <string name="hint_password" translatable="false">Password</string>
+    <string name="hint_confirm_password" translatable="false">Confirm Password</string>
+    <string name="signup_button" translatable="false">Sign Up</string>
+    <string name="login_link_text" translatable="false">Already have an account? Login</string>
+    <string name="error_full_name_required" translatable="false">Full name is required</string>
+    <string name="error_email_required" translatable="false">Email is required</string>
+    <string name="error_invalid_email" translatable="false">Enter a valid email</string>
+    <string name="error_password_required" translatable="false">Password is required</string>
+    <string name="error_password_length" translatable="false">Password must be at least 6 characters</string>
+    <string name="error_password_mismatch" translatable="false">Passwords do not match</string>
+    <string name="signup_success" translatable="false">Sign-Up Successful!</string>
+    <string name="navigate_to_login" translatable="false">Navigate to Login</string>
+    <string name="login_title" translatable="false">Login</string>
+    <string name="username" translatable="false">username</string>
+    <string name="profile" translatable="false">Profile</string>
+    <string name="navigate_to_profile" translatable="false">Navigate to Profile</string>
+    <string name="recommendations" translatable="false">Recommendations</string>
+    <!--    <string name="navigate_to_recommendations" translatable="false">Navigate to Recommendations</string>-->
+    <string name="career_path" translatable="false">Career Path</string>
+    <!--    <string name="navigate_to_career_path" translatable="false">Navigate to Career Path</string>-->
+    <string name="community_forum" translatable="false">Community Forum</string>
+    <!--    <string name="navigate_to_community_forum" translatable="false">Navigate to Community Forum</string>-->
+    <string name="resume" translatable="false">Resume</string>
+    <!--    <string name="navigate_to_resume" translatable="false">Navigate to Resume</string>-->
+    <string name="app_logo" translatable="false">App_Logo</string>
+    <string name="sign_up" translatable="false">Sign Up</string>
+    <string name="full_name" translatable="false">Full Name</string>
+    <string name="email" translatable="false">Email</string>
+    <string name="confirm_password" translatable="false">Confirm Password</string>
+    <string name="already_have_an_account_login" translatable="false">Already have an account? Login</string>
+    <string name="password" translatable="false">Password</string>
+    <string name="login" translatable="false">Login</string>
+    <string name="don_t_have_an_account_sign_up" translatable="false">Don\'t have an account? Sign up</string>
+    <string name="welcome_to_skill_development_recommendation_system">welcome to skill development recommendation system</string>
+    <string name="mongo_app_id">YOUR_APP_ID</string>
+    <string name="useremail">email</string>
+    <string name="forgot">forgot password ?</string>
+    <string name="sendcode">Send Code</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="update_password">Update Password</string>
+    <string name="otp">4 digit Code</string>
+    <string name="update">Update</string>
+    <!--    <string name="welcome_to_skill_development_system">welcome to skill development system</string>-->
+    <string name="profile_icon">profile_icon</string>
+    <string name="recommendations_icon">recommendations_icon</string>
+    <string name="career_path_icon">career_path_icon</string>
+    <string name="community_forum_icon">community_forum_icon\n</string>
+    <string name="resume_icon">resume_icon</string>
+    <string name="skill_assessment">Skill Assessment</string>
+    <string name="skill_assessment_icon">Skill Assessment_icon</string>
+    <string name="job_insights">Job Insights</string>
+    <string name="job_insights_icon">Job Insights icon</string>
+    <string name="progress_tracking">Progress Tracking</string>
+    <string name="progress_tracking_icon">Progress Tracking_icon</string>
+    <string name="career_path_visualization">career path visualization</string>
+    <string name="career_path_visualization_icon">career path visualization icon</string>
+    <string name="hellow">hellow</string>
+
+</resources>

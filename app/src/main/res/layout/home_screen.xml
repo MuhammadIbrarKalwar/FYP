@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F9F9F9"
+    android:fillViewport="true"
+    android:layout_gravity="center">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="40dp"
+       >
+
+        <!-- App Logo at the top -->
+        <!--            android:elevation="4dp"-->
+        <!--            android:background="@drawable/back4"-->
+
+
+        <!-- Welcome Title -->
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="259dp"
+            android:layout_height="132dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@string/app_logo"
+            android:src="@drawable/sdrs"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.367"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Cards with Icons for navigation -->
+        <TextView
+            android:id="@+id/welcomeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="sans-serif-condensed-light"
+            android:gravity="center"
+            android:text="@string/welcome_to_skill_development_recommendation_system"
+            android:textColor="#333333"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/logo" />
+
+        <androidx.gridlayout.widget.GridLayout
+            android:id="@+id/buttonContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            app:columnCount="2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/welcomeText"
+            app:rowCount="3">
+
+            <!-- Profile Button -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/buttonProfile"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="8dp"
+                android:backgroundTint="#FFFFFF"
+                android:foreground="?attr/selectableItemBackground"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:contentDescription="@string/profile_icon"
+                        android:src="@drawable/user" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/profile"
+                        android:textColor="#333333"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- skill_assessment Button -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/buttonSkillAssessment"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="8dp"
+                android:backgroundTint="#FFFFFF"
+                android:foreground="?attr/selectableItemBackground"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:contentDescription="@string/skill_assessment_icon"
+                        android:src="@drawable/assessment" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/skill_assessment"
+                        android:textColor="#333333"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- Recommendations Button -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/buttonRecommendation"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="8dp"
+                android:backgroundTint="#FFFFFF"
+                android:foreground="?attr/selectableItemBackground"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:contentDescription="@string/recommendations_icon"
+                        android:src="@drawable/recommendations" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/recommendations"
+                        android:textColor="#333333"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- Career Path visualization Button -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/buttonCareerPath"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="8dp"
+                android:backgroundTint="#FFFFFF"
+                android:foreground="?attr/selectableItemBackground"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:contentDescription="@string/career_path_visualization_icon"
+                        android:src="@drawable/develop" />
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/career_path_visualization"
+                        android:textColor="#333333"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Community Forum Button -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/buttonCommunityForum"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="8dp"
+                android:backgroundTint="#FFFFFF"
+                android:foreground="?attr/selectableItemBackground"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:contentDescription="@string/community_forum_icon"
+                        android:src="@drawable/community" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/community_forum"
+                        android:textColor="#333333"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Resume Button -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/buttonResume"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="8dp"
+                android:backgroundTint="#FFFFFF"
+                android:foreground="?attr/selectableItemBackground"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:contentDescription="@string/resume_icon"
+                        android:src="@drawable/resume" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/resume"
+                        android:textColor="#333333"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- job_insights Button -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/buttonJobInsights"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="8dp"
+                android:backgroundTint="#FFFFFF"
+                android:foreground="?attr/selectableItemBackground"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:contentDescription="@string/job_insights_icon"
+                        android:src="@drawable/insight" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/job_insights"
+                        android:textColor="#333333"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- progress_tracking Button -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/buttonProgressTracking"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="8dp"
+                android:backgroundTint="#FFFFFF"
+                android:foreground="?attr/selectableItemBackground"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:contentDescription="@string/progress_tracking_icon"
+                        android:src="@drawable/progress" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/progress_tracking"
+                        android:textColor="#333333"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </androidx.gridlayout.widget.GridLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
