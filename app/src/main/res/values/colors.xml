@@ -2,4 +2,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="chip_default">#E0E0E0</color>
+    <color name="chip_selected">#1565C0</color>
+
+    <color name="appBackground">#F0F0F0</color> <!-- Replace #F0F0F0 with your desired color code -->
 </resources>

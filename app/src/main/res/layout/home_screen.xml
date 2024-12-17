@@ -87,7 +87,7 @@
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:contentDescription="@string/profile_icon"
-                        android:src="@drawable/user" />
+                        android:src="@drawable/userprofile" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -159,13 +159,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    tools:ignore="UseCompoundDrawables">
 
                     <ImageView
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:contentDescription="@string/recommendations_icon"
-                        android:src="@drawable/recommendations" />
+                        android:src="@drawable/recommendation" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -198,13 +199,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    tools:ignore="UseCompoundDrawables">
 
                     <ImageView
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:contentDescription="@string/career_path_visualization_icon"
-                        android:src="@drawable/develop" />
+                        android:src="@drawable/visualization1" />
 
                     <TextView
                         android:layout_width="100dp"
@@ -237,7 +239,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    tools:ignore="UseCompoundDrawables">
 
                     <ImageView
                         android:layout_width="60dp"
@@ -275,7 +278,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    tools:ignore="UseCompoundDrawables">
 
                     <ImageView
                         android:layout_width="60dp"
