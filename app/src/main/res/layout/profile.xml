@@ -1,23 +1,177 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileActivity">
+    android:fillViewport="true"
+    android:background="#FFFFFF">
 
-    <TextView
-        android:id="@+id/textHelloWorld"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="@android:color/black"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:padding="24dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- Logo at the top -->
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="224dp"
+            android:layout_height="71dp"
+            android:layout_marginTop="24dp"
+            android:contentDescription="@string/app_logo"
+            android:src="@drawable/sdrs"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Contact Info Heading -->
+        <TextView
+            android:id="@+id/headingContactInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/contact_info"
+            android:textSize="20sp"
+            android:textColor="#1565C0"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/logo"
+            android:layout_marginTop="24dp" />
+
+        <!-- Name Field -->
+        <EditText
+            android:id="@+id/editTextName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="full name"
+            android:hint="@string/name"
+            android:inputType="textPersonName"
+            android:padding="16dp"
+            android:backgroundTint="#757575"
+            app:layout_constraintTop_toBottomOf="@id/headingContactInfo"
+            android:layout_marginTop="12dp"
+            android:textColor="#333333"
+            android:textColorHint="#666666" />
+
+        <!-- Email Field -->
+        <EditText
+            android:id="@+id/editTextEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="emailAddress"
+            android:hint="@string/email_address"
+            android:inputType="textEmailAddress"
+            android:padding="16dp"
+            android:backgroundTint="#757575"
+            app:layout_constraintTop_toBottomOf="@id/editTextName"
+            android:layout_marginTop="12dp"
+            android:textColor="#333333"
+            android:textColorHint="#666666" />
+
+        <!-- Contact Field -->
+        <EditText
+            android:id="@+id/editTextContact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="contact no"
+            android:hint="@string/contact_number"
+            android:inputType="text"
+            android:padding="16dp"
+            android:backgroundTint="#757575"
+            app:layout_constraintTop_toBottomOf="@id/editTextEmail"
+            android:layout_marginTop="12dp"
+            android:textColor="#333333"
+            android:textColorHint="#666666" />
+
+        <!-- Address Field -->
+        <EditText
+            android:id="@+id/editTextAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="Address"
+            android:hint="@string/address"
+            android:inputType="text"
+            android:padding="16dp"
+            android:backgroundTint="#757575"
+            app:layout_constraintTop_toBottomOf="@id/editTextContact"
+            android:layout_marginTop="12dp"
+            android:textColor="#333333"
+            android:textColorHint="#666666" />
+
+        <!-- DOB Field -->
+        <EditText
+            android:id="@+id/editTextDob"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="dob"
+            android:hint="@string/date_of_birth"
+            android:inputType="text"
+            android:padding="16dp"
+            android:backgroundTint="#757575"
+            app:layout_constraintTop_toBottomOf="@id/editTextAddress"
+            android:layout_marginTop="12dp"
+            android:textColor="#333333"
+            android:textColorHint="#666666" />
+
+        <!-- Skills Heading -->
+        <TextView
+            android:id="@+id/headingSkills"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/skills"
+            android:textSize="20sp"
+            android:textColor="#1565C0"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/editTextDob"
+            android:layout_marginTop="20dp"
+            tools:ignore="MissingConstraints" />
+
+<!--        &lt;!&ndash; Skills Dropdown &ndash;&gt;-->
+<!--        <Spinner-->
+<!--            android:id="@+id/skillsSpinner"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="48dp"-->
+<!--            android:layout_marginTop="12dp"-->
+<!--            android:text="@string/skills"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/headingSkills"-->
+<!--            android:spinnerMode="dropdown" />-->
+
+<!--        &lt;!&ndash; Save Button &ndash;&gt;-->
+<!--        <Button-->
+<!--            android:id="@+id/buttonSaveProfile"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="24dp"-->
+<!--            android:backgroundTint="#1565C0"-->
+<!--            android:text="@string/save_profile"-->
+<!--            android:textColor="#FFFFFF"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/skillsSpinner"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent" />-->
+
+        <!-- ChipGroup for Multiple Skills Selection -->
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/skillsChipGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:singleSelection="false"
+            app:layout_constraintTop_toBottomOf="@id/headingSkills"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Save Button -->
+        <Button
+            android:id="@+id/buttonSaveProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="#1565C0"
+            android:text="@string/save_profile"
+            android:textColor="#FFFFFF"
+            app:layout_constraintTop_toBottomOf="@id/skillsChipGroup"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

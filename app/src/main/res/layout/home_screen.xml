@@ -10,35 +10,46 @@
     android:layout_gravity="center">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="40dp"
-       >
+        android:layout_gravity="center"
+        android:padding="42dp">
 
-        <!-- App Logo at the top -->
-        <!--            android:elevation="4dp"-->
-        <!--            android:background="@drawable/back4"-->
+        <!-- Logout Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonLogout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:backgroundTint="#1565C0"
+            android:text="@string/logout"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            app:cornerRadius="16dp"
+            app:icon="@drawable/logout"
+            app:iconGravity="start"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-
-        <!-- Welcome Title -->
+        <!-- App Logo -->
         <ImageView
             android:id="@+id/logo"
             android:layout_width="259dp"
             android:layout_height="132dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="30dp"
             android:contentDescription="@string/app_logo"
             android:src="@drawable/sdrs"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.367"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/buttonLogout" />
 
-        <!-- Cards with Icons for navigation -->
+        <!-- Welcome Title -->
         <TextView
             android:id="@+id/welcomeText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:fontFamily="sans-serif-condensed-light"
             android:gravity="center"
             android:text="@string/welcome_to_skill_development_recommendation_system"
@@ -48,15 +59,18 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/logo" />
 
+        <!-- Cards with Icons for navigation -->
         <androidx.gridlayout.widget.GridLayout
             android:id="@+id/buttonContainer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_width="335dp"
+            android:layout_height="670dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="12dp"
             android:gravity="center"
+            android:padding="0.6dp"
             app:columnCount="2"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.386"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/welcomeText"
             app:rowCount="3">
@@ -70,25 +84,17 @@
                 android:backgroundTint="#FFFFFF"
                 android:foreground="?attr/selectableItemBackground"
                 app:cardCornerRadius="12dp"
-                app:cardElevation="6dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
+                app:cardElevation="6dp">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:orientation="vertical"
-                    tools:ignore="UseCompoundDrawables">
-
+                    android:orientation="vertical">
                     <ImageView
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:contentDescription="@string/profile_icon"
-                        android:src="@drawable/user" />
-
+                        android:src="@drawable/userprofile" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -159,13 +165,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    tools:ignore="UseCompoundDrawables">
 
                     <ImageView
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:contentDescription="@string/recommendations_icon"
-                        android:src="@drawable/recommendations" />
+                        android:src="@drawable/recommendation" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -198,13 +205,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    tools:ignore="UseCompoundDrawables">
 
                     <ImageView
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:contentDescription="@string/career_path_visualization_icon"
-                        android:src="@drawable/develop" />
+                        android:src="@drawable/visualization1" />
 
                     <TextView
                         android:layout_width="100dp"
@@ -237,7 +245,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    tools:ignore="UseCompoundDrawables">
 
                     <ImageView
                         android:layout_width="60dp"
@@ -275,7 +284,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    tools:ignore="UseCompoundDrawables">
 
                     <ImageView
                         android:layout_width="60dp"
@@ -373,6 +383,11 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
+
+            <!-- Add other card views here as per your code -->
+
         </androidx.gridlayout.widget.GridLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

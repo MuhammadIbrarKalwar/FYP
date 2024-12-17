@@ -56,8 +56,10 @@ dependencies {
     //implementation libs.mongodb.atlas.sdk // VERSION ko latest se replace karein
     //implementation 'org.mongodb:mongodb-atlas-sdk-android:latest-version'
 
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation libs.retrofit
+    implementation libs.converter.gson
+    implementation libs.material.v160
+
 
 
 }

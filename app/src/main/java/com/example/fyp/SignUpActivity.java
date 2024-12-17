@@ -21,8 +21,6 @@ import androidx.appcompat.app.AppCompatActivity;
 public class SignUpActivity extends AppCompatActivity {
 
     private EditText editTextFullName, editTextEmail, editTextPassword, editTextConfirmPassword;
-    private Button buttonSignUp;
-    private TextView loginLink;
     private ApiService apiService;
 
     @Override
@@ -37,8 +35,8 @@ public class SignUpActivity extends AppCompatActivity {
         editTextEmail = findViewById(R.id.editTextEmail);
         editTextPassword = findViewById(R.id.editTextPassword);
         editTextConfirmPassword = findViewById(R.id.editTextConfirmPassword);
-        buttonSignUp = findViewById(R.id.buttonSignUp);
-        loginLink = findViewById(R.id.loginLink);
+        Button buttonSignUp = findViewById(R.id.buttonSignUp);
+        TextView loginLink = findViewById(R.id.loginLink);
 
         // Set onClickListener for Sign-Up button
         buttonSignUp.setOnClickListener(new View.OnClickListener() {

@@ -3,6 +3,7 @@ package com.example.fyp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +20,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.home_screen); // Set the updated XML layout
 
         // Initialize CardViews with their IDs
+        Button logoutButton = findViewById(R.id.buttonLogout);
         cardProfile = findViewById(R.id.buttonProfile);
         cardRecommendation = findViewById(R.id.buttonRecommendation);
         cardCareerPath = findViewById(R.id.buttonCareerPath);
@@ -27,6 +29,14 @@ public class HomeActivity extends AppCompatActivity {
         cardJobInsights = findViewById(R.id.buttonJobInsights);
         cardProgressTracking = findViewById(R.id.buttonProgressTracking);
         cardSkillAssessment = findViewById(R.id.buttonSkillAssessment);
+
+        logoutButton.setOnClickListener(v -> {
+            Toast.makeText(this, "Logged Out Successfully!", Toast.LENGTH_SHORT).show();
+            // Add your logout logic here (e.g., clear session, navigate to login screen)
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
+            finish(); // Close the current activity
+        });
 
         // Set onClickListeners with try-catch blocks for each CardView
         cardProfile.setOnClickListener(new View.OnClickListener() {

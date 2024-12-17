@@ -8,13 +8,16 @@ appcompat = "1.7.0"
 material = "1.12.0"
 activity = "1.9.3"
 constraintlayout = "2.2.0"
+materialVersion = "1.6.0"
 mongodbAtlasSdk = "VERSION"
 mongodbAtlasSdkAndroid = "latest-version"
 realmGradlePlugin = "10.18.0"
+retrofit = "2.9.0"
 supportAnnotations = "28.0.0"
 gridlayout = "1.0.0"
 
 [libraries]
+converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
 javax-naming-api = { module = "javax.naming:javax.naming-api", version.ref = "javaxNamingApi" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
@@ -23,9 +26,11 @@ appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "a
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+material-v160 = { module = "com.google.android.material:material", version.ref = "materialVersion" }
 mongodb-atlas-sdk = { module = "org.mongodb:mongodb-atlas-sdk", version.ref = "mongodbAtlasSdk" }
 mongodb-atlas-sdk-android = { module = "org.mongodb:mongodb-atlas-sdk-android", version.ref = "mongodbAtlasSdkAndroid" }
 realm-gradle-plugin = { module = "io.realm:realm-gradle-plugin", version.ref = "realmGradlePlugin" }
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 support-annotations = { group = "com.android.support", name = "support-annotations", version.ref = "supportAnnotations" }
 gridlayout = { group = "androidx.gridlayout", name = "gridlayout", version.ref = "gridlayout" }
 
