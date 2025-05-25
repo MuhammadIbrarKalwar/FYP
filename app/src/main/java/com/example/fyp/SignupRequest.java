@@ -1,9 +1,9 @@
 package com.example.fyp;
 
 public class SignupRequest {
-    private String name;
-    private String email;
-    private String password;
+    private final String name;
+    private final String email;
+    private final String password;
 
     public SignupRequest(String name, String email, String password) {
         this.name=name;

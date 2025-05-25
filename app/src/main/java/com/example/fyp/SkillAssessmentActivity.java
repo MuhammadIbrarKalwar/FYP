@@ -21,20 +21,69 @@ public class SkillAssessmentActivity extends AppCompatActivity {
     private ProgressBar progressBar;
 
     private final String[] questions = {
-            "What does CPU stand for?",
-            "Which language is primarily used for web development?",
-            "What is the shortcut for copy in Windows?",
-            "Which of the following is an operating system?"
+            "1. Which HTML element is used to define important text?",
+            "2. What does the placeholder attribute in an HTML input element do?",
+            "3. Which CSS property is used to control the spacing between lines of text?",
+            "4. What is the correct syntax for applying a CSS class to an HTML element?",
+            "5. Which of the following media query will apply styles for devices with a max-width of 768px?",
+            "6. How do you make a grid item span 2 rows in CSS Grid?",
+            "7. Which CSS property is used to make an element stick to the top of the viewport while scrolling?",
+            "8. What is the default value of the z-index property?",
+            "9. In Flexbox, which property is used to change the direction of the main axis?",
+            "10. Which of the following will create a 2-column layout with equal widths in CSS Grid?",
+            "11. How can you apply a transition effect to all properties of an element in CSS?",
+            "12. Which pseudo-class is used to style the first <p> element inside a <div>?",
+            "13. How can you ensure that an element will maintain its aspect ratio when resized?",
+            "14. Which property controls whether an element can be resized by the user?",
+            "15. What is the difference between relative and absolute positioning?",
+            "16. Which CSS function can be used to apply a mask to an image?",
+            "17. How can you apply a gradient border to an element in CSS?",
+            "18. What does the contain property do in CSS?",
+            "19. How can you style scrollbars in CSS?",
+            "20. What is the purpose of will-change in CSS?",
+            "21. Which tool is used to monitor Android app performance?",
+            "22. What does MVC stand for in software design?",
+            "23. What is the primary purpose of a cache in computing?",
+            "24. What does UI stand for?",
+            "25. What is the main purpose of responsive web design?"
     };
 
     private final String[][] options = {
-            {"Central Processing Unit", "Central Program Unit", "Computer Personal Unit", "Control Panel Unit"},
-            {"Python", "HTML", "C++", "Java"},
-            {"Ctrl + X", "Ctrl + C", "Ctrl + V", "Ctrl + Z"},
-            {"Windows", "Intel", "BIOS", "NVIDIA"}
+            {"<important>", "<strong>", "<em>", "<highlight>"},
+            {"Sets a default value for the field.", "Provides a hint or sample text in the input field.", "Validates the input field.", "Changes the field to required."},
+            {"letter-spacing", "line-height", "word-spacing", "text-spacing"},
+            {"<div class=\"classname\">", "<div id=\"classname\">", "<div css=\"classname\">", "<div style=\"classname\">"},
+            {"@media screen and (width <= 768px)", "@media only screen and (max-width: 768px)", "@media (screen-width: 768px)", "@media only screen (max-width <= 768px)"},
+            {"grid-column: 2 / span 2;", "grid-row: span 2;", "grid-template: row-span 2;", "grid-item: row-span 2;"},
+            {"position: fixed;", "position: absolute;", "position: sticky;", "position: relative;"},
+            {"1", "0", "auto", "inherit"},
+            {"align-content", "justify-content", "flex-wrap", "flex-direction"},
+            {"grid-template-columns: auto auto;", "grid-template-columns: 1fr 1fr;", "grid-template-columns: repeat(2, 1fr);", "Both b) and c)"},
+            {"transition: all 0.3s ease;", "transition-property: all;", "animation: all ease 0.3s;", "transition-effect: 0.3s ease;"},
+            {"div:first-p", "div>p:first-child", "div p:first-of-type", "div:first-child"},
+            {"Set height and width in percentages.", "Use aspect-ratio property.", "Use min-width and min-height.", "Use calc() to set width based on height."},
+            {"resize", "overflow", "clip-path", "size-control"},
+            {"relative positions an element in relation to its nearest ancestor.", "absolute positions an element in relation to the nearest positioned ancestor.", "absolute positions an element relative to the document root.", "Both b) and c) are correct."},
+            {"clip-path()", "mask()", "filter()", "blend-mode()"},
+            {"Use border-image property with a gradient.", "Use background-clip for the border.", "Use gradient-border shorthand property.", "None of the above."},
+            {"Controls how elements are wrapped inside a parent.", "Improves performance by limiting a container's layout and paint scope.", "Sets an element’s overflow to hidden.", "Ensures all children of an element are styled the same way."},
+            {"scrollbar-width and scrollbar-color", "::scrollbar pseudo-element", "::-webkit-scrollbar pseudo-element", "All of the above"},
+            {"Indicates which properties are likely to change.", "Locks an element's properties during transitions.", "Boosts rendering speed of unchanged properties.", "Prevents user interaction on the element."},
+            {"Android Profiler", "Android Tracker", "App Monitor", "Performance Tester"},
+            {"Model-View-Controller", "Monitor-Version-Control", "Multiple-View-Control", "Model-Version-Compile"},
+            {"Improve processing speed", "Store frequently accessed data", "Backup system data", "Both A and B"},
+            {"User Interface", "Universal Input", "Unified Interaction", "User Interaction"},
+            {"Optimize for high performance", "Adapt to different screen sizes", "Improve security", "Reduce development time"}
     };
 
-    private final int[] correctAnswers = {0, 1, 1, 0}; // Correct option indices
+    private final int[] correctAnswers = {
+            1, 1, 1, 0, 1,
+            1, 2, 2, 3, 3,
+            0, 1, 1, 0, 1,
+            1, 0, 1, 3, 0,
+            0, 0, 1, 0, 1
+    };
+    // Correct option indices
     private int currentQuestionIndex = 0;
 
     // Array to track user's selected answers (-1 means no answer selected)

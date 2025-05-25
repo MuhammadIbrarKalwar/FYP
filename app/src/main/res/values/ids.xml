@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-<!--    <item name="buttonProfile" type="id">buttonprofile</item>-->
+    <item name="skillsChipGroup" type="id">@id/skillsChipGroup</item>
+
 </resources>
+
+<!--    <item name="skillsChipGroup" type="id">skillsChipGroup</item>-->

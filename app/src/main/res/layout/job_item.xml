@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="#FFFFFF"
+    android:foreground="?android:attr/selectableItemBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Job Title -->
+        <TextView
+            android:id="@+id/textJobTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Software Developer"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#1565C0"
+            android:layout_marginBottom="8dp"
+            android:maxLines="2"
+            android:ellipsize="end" />
+
+        <!-- Company Name -->
+        <TextView
+            android:id="@+id/textCompanyName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🏢 Tech Company Ltd"
+            android:textSize="14sp"
+            android:textColor="#333333"
+            android:textStyle="bold"
+            android:layout_marginBottom="6dp" />
+
+        <!-- Location and Job Type Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="6dp">
+
+            <TextView
+                android:id="@+id/textLocation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="📍 London, UK"
+                android:textSize="12sp"
+                android:textColor="#666666" />
+
+            <TextView
+                android:id="@+id/textJobType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⏰ Full-time"
+                android:textSize="12sp"
+                android:textColor="#666666" />
+
+        </LinearLayout>
+
+        <!-- Salary -->
+        <TextView
+            android:id="@+id/textSalary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="💰 £40,000 - £60,000"
+            android:textSize="14sp"
+            android:textColor="#2E7D32"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Job Description -->
+        <TextView
+            android:id="@+id/textDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="We are looking for a skilled software developer to join our dynamic team. Experience with modern technologies required..."
+            android:textSize="13sp"
+            android:textColor="#555555"
+            android:layout_marginBottom="12dp"
+            android:maxLines="3"
+            android:ellipsize="end"
+            android:lineSpacingMultiplier="1.2" />
+
+        <!-- Divider Line -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E0E0E0"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Action Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="💡 Tap to view full details"
+                android:textSize="11sp"
+                android:textColor="#999999"
+                android:textStyle="italic"
+                android:layout_gravity="center_vertical" />
+
+            <Button
+                android:id="@+id/btnViewJob"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="View Job"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#1565C0"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                style="@style/Widget.MaterialComponents.Button" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

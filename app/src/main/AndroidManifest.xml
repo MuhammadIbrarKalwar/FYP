@@ -20,31 +20,31 @@
             android:exported="false" />
         <activity
             android:name=".JobInsightsActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".ResumeActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".CommunityForumActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".CareerPathVisualizationActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".RecommendationsActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".SkillAssessmentActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".ProfileActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".UpdatePasswordActivity"
             android:exported="false" />
         <activity
             android:name=".ForgotPasswordActivity"
-            android:exported="false" /> <!-- Login Activity with Launcher Intent Filter -->
+            android:exported="false" />
         <activity
             android:name=".LoginActivity"
             android:exported="true"

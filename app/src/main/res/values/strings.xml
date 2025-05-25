@@ -21,22 +21,19 @@
     <string name="profile" translatable="false">Profile</string>
     <string name="navigate_to_profile" translatable="false">Navigate to Profile</string>
     <string name="recommendations" translatable="false">Recommendations</string>
-    <!--    <string name="navigate_to_recommendations" translatable="false">Navigate to Recommendations</string>-->
     <string name="career_path" translatable="false">Career Path</string>
-    <!--    <string name="navigate_to_career_path" translatable="false">Navigate to Career Path</string>-->
     <string name="community_forum" translatable="false">Community Forum</string>
-    <!--    <string name="navigate_to_community_forum" translatable="false">Navigate to Community Forum</string>-->
     <string name="resume" translatable="false">Resume</string>
-    <!--    <string name="navigate_to_resume" translatable="false">Navigate to Resume</string>-->
     <string name="app_logo" translatable="false">App_Logo</string>
     <string name="sign_up" translatable="false">Sign Up</string>
     <string name="full_name" translatable="false">Full Name</string>
     <string name="email" translatable="false">Email</string>
     <string name="confirm_password" translatable="false">Confirm Password</string>
-    <string name="already_have_an_account_login" translatable="false">Already have an account? Login</string>
     <string name="password" translatable="false">Password</string>
-    <string name="login" translatable="false">Login</string>
     <string name="don_t_have_an_account_sign_up" translatable="false">Don\'t have an account? Sign up</string>
+    <string name="already_have_an_account_login" translatable="false">Already have an account? Login</string>
+
+    <string name="login" translatable="false">Login</string>
     <string name="welcome_to_skill_development_recommendation_system" translatable="false">welcome to skill development recommendation system</string>
     <string name="mongo_app_id" translatable="false">YOUR_APP_ID</string>
     <string name="useremail" translatable="false">email</string>
@@ -46,11 +43,10 @@
     <string name="update_password" translatable="false">Update Password</string>
     <string name="otp" translatable="false">4 digit Code</string>
     <string name="update" translatable="false">Update</string>
-    <!--    <string name="welcome_to_skill_development_system">welcome to skill development system</string>-->
     <string name="profile_icon" translatable="false">profile_icon</string>
     <string name="recommendations_icon" translatable="false">recommendations_icon</string>
     <string name="career_path_icon" translatable="false">career_path_icon</string>
-    <string name="community_forum_icon" translatable="false">community_forum_icon\n</string>
+    <string name="community_forum_icon" translatable="false">community_forum_icon</string>
     <string name="resume_icon" translatable="false">resume_icon</string>
     <string name="skill_assessment" translatable="false">Skill Assessment</string>
     <string name="skill_assessment_icon" translatable="false">Skill Assessment_icon</string>
@@ -61,12 +57,12 @@
     <string name="career_path_visualization" translatable="false">career path visualization</string>
     <string name="career_path_visualization_icon" translatable="false">career path visualization icon</string>
     <string name="hellow" translatable="false">hellow</string>
-    <string name="skills" translatable="false">SkillsforProfile</string>
+    <string name="skills" translatable="false">Skills for Profile</string>
     <string name="date_of_birth" translatable="false">Date of Birth</string>
     <string name="address" translatable="false">Address</string>
     <string name="contact_number" translatable="false">Contact Number</string>
     <string name="email_address" translatable="false">Email Address</string>
-    <string name="name" translatable="false">" Name for profile"</string>
+    <string name="name" translatable="false">Name for profile</string>
     <string name="contact_info" translatable="false">Contact Info</string>
 
     <string name="skill_assessment_dashboard" translatable="false">Skill Assessment Dashboard</string>
@@ -78,14 +74,15 @@
     <string name="option_4" translatable="false">Option 4</string>
     <string name="next" translatable="false">Next</string>
 
-    <string name="test_your_skills_instruction">Note: Test your computer skills by answering the questions below.</string>
+    <string name="test_your_skills_instruction" translatable="false">Note: Test your computer skills by answering the questions below.</string>
 
 
     <string name="question_placeholder" translatable="false">Question will appear here.</string>
     <string name="result_placeholder" translatable="false">Results will be displayed here.</string>
-    <string name="back">back</string>
-    <string name="save_profile">Save Profile</string>
-    <string name="logout">logout</string>
+    <string name="back" translatable="false">back</string>
+    <string name="save_profile" translatable="false">Save Profile</string>
+    <string name="logout" translatable="false">logout</string>
+
     <string-array name="skills_array">
         <item>select_default</item>
         <item>C</item>
@@ -99,7 +96,24 @@
         <item>Android_development</item>
         <item>React</item>
     </string-array>
-
+    <string name="FullStackDeveloper" translatable="false">Full Stack Developer</string>
+    <string name="recommended_skills">Recommended Skills</string>
+    <string name="f_name">Full Name</string>
+    <string name="email_for_resume">Email</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="skills_comma_separated">Skills (comma-separated)</string>
+    <string name="experience">Experience</string>
+    <string name="generate_resume">Generate Resume</string>
+    <string name="professional_summary">Professional Summary</string>
+    <string name="education_e_g_bscs_2020_2024">Education (e.g. BSCS, 2020-2024)</string>
+    <string name="projects_e_g_skill_dev_system_app">Projects (e.g. Skill Dev System App...)</string>
+    <string name="add_skill">Add Skill</string>
+    <string name="interests">Interests</string>
+    <string name="add_interest">Add Interest</string>
+    <string name="create_new_post">Create New Post</string>
+    <string name="your_name">Your Name</string>
+    <string name="what_s_on_your_mind">What\'s on your mind?</string>
+    <string name="post">Post</string>
 
 
 </resources>

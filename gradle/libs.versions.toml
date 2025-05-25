@@ -1,5 +1,7 @@
 [versions]
 agp = "8.5.0"
+googleMaterial = "1.9.0"
+gson = "2.10.1"
 javaxNamingApi = "1.0.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
@@ -11,6 +13,8 @@ constraintlayout = "2.2.0"
 materialVersion = "1.6.0"
 mongodbAtlasSdk = "VERSION"
 mongodbAtlasSdkAndroid = "latest-version"
+okhttp = "4.10.0"
+playServicesFonts = "17.0.0"
 realmGradlePlugin = "10.18.0"
 retrofit = "2.9.0"
 supportAnnotations = "28.0.0"
@@ -18,17 +22,22 @@ gridlayout = "1.0.0"
 
 [libraries]
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
+gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 javax-naming-api = { module = "javax.naming:javax.naming-api", version.ref = "javaxNamingApi" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+logging-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "okhttp" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 material-v160 = { module = "com.google.android.material:material", version.ref = "materialVersion" }
+material-v190 = { module = "com.google.android.material:material", version.ref = "googleMaterial" }
 mongodb-atlas-sdk = { module = "org.mongodb:mongodb-atlas-sdk", version.ref = "mongodbAtlasSdk" }
 mongodb-atlas-sdk-android = { module = "org.mongodb:mongodb-atlas-sdk-android", version.ref = "mongodbAtlasSdkAndroid" }
+okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
+play-services-fonts = { module = "com.google.android.gms:play-services-fonts", version.ref = "playServicesFonts" }
 realm-gradle-plugin = { module = "io.realm:realm-gradle-plugin", version.ref = "realmGradlePlugin" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 support-annotations = { group = "com.android.support", name = "support-annotations", version.ref = "supportAnnotations" }

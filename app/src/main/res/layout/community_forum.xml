@@ -1,10 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CommunityForumActivity">
+    tools:context=".CommunityForumActivity"
+    android:background="#FFFFFF">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Logo at the top -->
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="224dp"
+            android:layout_height="71dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="24dp"
+            android:contentDescription="@string/app_logo"
+            android:src="@drawable/sdrs" />
+
+        <!-- Create New Post Button -->
+        <Button
+            android:id="@+id/btnCreatePost"
+            android:text="@string/create_new_post"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="#1565C0"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="8dp" />
+
+        <!-- New Post Form -->
+        <LinearLayout
+            android:id="@+id/layoutCreatePost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="8dp"
+            >
+
+            <EditText
+                android:id="@+id/etAuthor"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:autofillHints="name"
+                android:backgroundTint="#BDBDBD"
+                android:textColor="#333333"
+                android:textColorHint="#4E4E4E"
+                android:hint="@string/your_name"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/etContent"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="#BDBDBD"
+                android:textColor="#333333"
+                android:textColorHint="#4E4E4E"
+                android:autofillHints="commit"
+                android:gravity="top"
+                android:hint="@string/what_s_on_your_mind"
+                android:inputType="textShortMessage"
+                android:minLines="3" />
+
+            <Button
+                android:id="@+id/btnSubmitPost"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="@string/post"
+                android:backgroundTint="#1565C0"
+                android:textColor="#FFFFFF"/>
+        </LinearLayout>
+
+        <!-- Post Container -->
+        <LinearLayout
+            android:id="@+id/postContainer"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp" />
+
+    </LinearLayout>
+</ScrollView>

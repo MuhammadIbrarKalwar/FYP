@@ -1,211 +1,182 @@
-    package com.example.fyp;
+package com.example.fyp;
 
-    import android.app.DatePickerDialog;
-    import android.os.Bundle;
-    import android.text.TextUtils;
-    import android.util.Patterns;
-    import android.widget.Button;
-    import android.widget.EditText;
-    import android.widget.Toast;
+import android.app.DatePickerDialog;
+import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Patterns;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
-    import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
-    import com.google.android.material.chip.Chip;
-    import com.google.android.material.chip.ChipGroup;
+import java.util.Calendar;
 
-    import java.util.ArrayList;
-    import java.util.Calendar;
-    import java.util.List;
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
-    public class ProfileActivity extends AppCompatActivity {
+public class ProfileActivity extends AppCompatActivity {
 
-        private EditText editTextName, editTextContact, editTextAddress, editTextDob, editTextEmail;
-        private ChipGroup skillsChipGroup;
+    // Contact Info Fields Only
+    EditText editTextName, editTextEmail, editTextContact, editTextAddress, editTextDob;
+    Button buttonSaveProfile;
 
-        private final String[] skills = {"Java", "C++", "HTML", "CSS", "Python", "JavaScript", "SQL", "Android"};
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.profile);
 
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.profile);
-
-            // Initialize views
-            editTextName = findViewById(R.id.editTextName);
-            editTextEmail = findViewById(R.id.editTextEmail); // Email field
-            editTextContact = findViewById(R.id.editTextContact);
-            editTextAddress = findViewById(R.id.editTextAddress);
-            editTextDob = findViewById(R.id.editTextDob);
-            skillsChipGroup = findViewById(R.id.skillsChipGroup);
-            Button buttonSaveProfile = findViewById(R.id.buttonSaveProfile);
-
-            //validation
-            setFocusListeners();
-
-
-            // DatePicker for DOB
-            editTextDob.setOnClickListener(v -> showDatePicker());
-
-            // Add skills as Chips dynamically
-            for (String skill : skills) {
-                Chip chip = new Chip(this);
-                chip.setText(skill);
-                chip.setCheckable(true);
-                chip.setChipBackgroundColorResource(R.color.chip_default); // Default color
-                chip.setTextColor(getResources().getColor(R.color.black));
-
-                chip.setOnClickListener(v -> {
-                    if (chip.isChecked()) {
-                        chip.setChipBackgroundColorResource(R.color.chip_selected); // Selected background color
-                        chip.setTextColor(getResources().getColor(R.color.white)); // Selected text color
-                    } else {
-                        chip.setChipBackgroundColorResource(R.color.chip_default); // Default background color
-                        chip.setTextColor(getResources().getColor(R.color.black)); // Default text color
-                    }
-                });
-
-                skillsChipGroup.addView(chip);
-            }
-
-            // Save button functionality
-            buttonSaveProfile.setOnClickListener(v -> saveProfile());
-        }
-
-        private void saveProfile() {
-            String name = editTextName.getText().toString().trim();
-            String email = editTextEmail.getText().toString().trim();
-            String contact = editTextContact.getText().toString().trim();
-            String address = editTextAddress.getText().toString().trim();
-            String dob = editTextDob.getText().toString().trim();
-            List<String> selectedSkills = getSelectedSkills();
-
-            // Validation
-            if (TextUtils.isEmpty(name)) {
-                editTextName.setError("Name is required");
-                editTextName.requestFocus();
-                return;
-            }
-
-            if (TextUtils.isEmpty(email)) {
-                editTextEmail.setError("Email is required");
-                editTextEmail.requestFocus();
-                return;
-            }
-
-            if (IsValidEmail(email)) {
-                editTextEmail.setError("Enter a valid email address");
-                editTextEmail.requestFocus();
-                return;
-            }
-
-            if (TextUtils.isEmpty(contact)) {
-                editTextContact.setError("Contact number is required");
-                editTextContact.requestFocus();
-                return;
-            }
-
-            if (IsValidPhoneNumber(contact)) {
-                editTextContact.setError("Enter a valid phone number");
-                editTextContact.requestFocus();
-                return;
-            }
-
-            if (TextUtils.isEmpty(address)) {
-                editTextAddress.setError("Address is required");
-                editTextAddress.requestFocus();
-                return;
-            }
-
-            if (TextUtils.isEmpty(dob)) {
-                editTextDob.setError("Date of Birth is required");
-                editTextDob.requestFocus();
-                return;
-            }
-
-            if (selectedSkills.isEmpty()) {
-                Toast.makeText(this, "Please select at least one skill", Toast.LENGTH_SHORT).show();
-                return;
-            }
-
-            // Success message
-            Toast.makeText(this, "Profile Saved Successfully!\nSkills: " + selectedSkills, Toast.LENGTH_LONG).show();
-
-            // Save data logic here
-        }
-
-        private boolean IsValidPhoneNumber(String phone) {
-            return !Patterns.PHONE.matcher(phone).matches() || phone.length() < 10;
-        }
-
-        private boolean IsValidEmail(String email) {
-            return !Patterns.EMAIL_ADDRESS.matcher(email).matches();
-        }
-
-        private List<String> getSelectedSkills() {
-            List<String> selectedSkills = new ArrayList<>();
-            for (int i = 0; i < skillsChipGroup.getChildCount(); i++) {
-                Chip chip = (Chip) skillsChipGroup.getChildAt(i);
-                if (chip.isChecked()) {
-                    selectedSkills.add(chip.getText().toString());
-                }
-            }
-            return selectedSkills;
-        }
-
-        private void setFocusListeners() {
-            // Name field focus listener
-            editTextName.setOnFocusChangeListener((v, hasFocus) -> {
-                if (!hasFocus && TextUtils.isEmpty(editTextName.getText().toString().trim())) {
-                    editTextName.setError("Name is required");
-                }
-            });
-
-            // Email field focus listener
-            editTextEmail.setOnFocusChangeListener((v, hasFocus) -> {
-                String email = editTextEmail.getText().toString().trim();
-                if (!hasFocus && (TextUtils.isEmpty(email) || IsValidEmail(email))) {
-                    editTextEmail.setError("Enter a valid email address");
-                }
-            });
-
-            // Contact field focus listener
-            editTextContact.setOnFocusChangeListener((v, hasFocus) -> {
-                String contact = editTextContact.getText().toString().trim();
-                if (!hasFocus && (TextUtils.isEmpty(contact) || IsValidPhoneNumber(contact))) {
-                    editTextContact.setError("Enter a valid phone number");
-                }
-            });
-
-            // Address field focus listener
-            editTextAddress.setOnFocusChangeListener((v, hasFocus) -> {
-                if (!hasFocus && TextUtils.isEmpty(editTextAddress.getText().toString().trim())) {
-                    editTextAddress.setError("Address is required");
-                }
-            });
-
-            // DOB field focus listener
-            editTextDob.setOnFocusChangeListener((v, hasFocus) -> {
-                if (!hasFocus && TextUtils.isEmpty(editTextDob.getText().toString().trim())) {
-                    editTextDob.setError("Date of Birth is required");
-                }
-            });
-        }
-
-        private void showDatePicker() {
-            final Calendar calendar = Calendar.getInstance();
-            int year = calendar.get(Calendar.YEAR);
-            int month = calendar.get(Calendar.MONTH);
-            int day = calendar.get(Calendar.DAY_OF_MONTH);
-
-            DatePickerDialog datePickerDialog = new DatePickerDialog(
-                    this,
-                    (view, selectedYear, selectedMonth, selectedDay) -> {
-                        // Month index starts from 0, so add 1
-                        String selectedDate = selectedDay + "/" + (selectedMonth + 1) + "/" + selectedYear;
-                        editTextDob.setText(selectedDate);
-                    },
-                    year, month, day
-            );
-
-            datePickerDialog.show();
-        }
+        // Initialize views
+        initializeViews();
+        setupListeners();
+        setFocusListeners();
     }
+
+    private void initializeViews() {
+        editTextName = findViewById(R.id.editTextName);
+        editTextEmail = findViewById(R.id.editTextEmail);
+        editTextContact = findViewById(R.id.editTextContact);
+        editTextAddress = findViewById(R.id.editTextAddress);
+        editTextDob = findViewById(R.id.editTextDob);
+        buttonSaveProfile = findViewById(R.id.buttonSaveProfile);
+    }
+
+    private void setupListeners() {
+        // Date Picker for DOB
+        editTextDob.setOnClickListener(v -> showDatePicker());
+
+        // Save Profile Button
+        buttonSaveProfile.setOnClickListener(v -> {
+            if (validateContactInfo()) {
+                saveContactInfoToApi();
+            }
+        });
+    }
+
+    private void showDatePicker() {
+        final Calendar calendar = Calendar.getInstance();
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH);
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(
+                this,
+                (view, selectedYear, selectedMonth, selectedDay) -> {
+                    String formattedDate = String.format("%04d-%02d-%02d", selectedYear, selectedMonth + 1, selectedDay);
+                    editTextDob.setText(formattedDate);
+                },
+                year, month, day
+        );
+        datePickerDialog.show();
+    }
+
+    private boolean validateContactInfo() {
+        String name = editTextName.getText().toString().trim();
+        String email = editTextEmail.getText().toString().trim();
+        String contact = editTextContact.getText().toString().trim();
+        String address = editTextAddress.getText().toString().trim();
+        String dob = editTextDob.getText().toString().trim();
+
+        if (TextUtils.isEmpty(name)) {
+            editTextName.setError("Name is required");
+            editTextName.requestFocus();
+            return false;
+        }
+
+        if (TextUtils.isEmpty(email) || !Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            editTextEmail.setError("Enter a valid email address");
+            editTextEmail.requestFocus();
+            return false;
+        }
+
+        if (TextUtils.isEmpty(contact) || contact.length() < 10) {
+            editTextContact.setError("Enter a valid contact number (minimum 10 digits)");
+            editTextContact.requestFocus();
+            return false;
+        }
+
+        if (TextUtils.isEmpty(address)) {
+            editTextAddress.setError("Address is required");
+            editTextAddress.requestFocus();
+            return false;
+        }
+
+        if (TextUtils.isEmpty(dob)) {
+            editTextDob.setError("Date of Birth is required");
+            editTextDob.requestFocus();
+            return false;
+        }
+
+        return true;
+    }
+
+    private void saveContactInfoToApi() {
+        // Show loading state
+        buttonSaveProfile.setEnabled(false);
+        buttonSaveProfile.setText("Saving...");
+
+        // Create ProfileData with contact info only
+        ProfileData profileData = new ProfileData();
+        profileData.user_id = 1; // You can get this from SharedPreferences or login session
+        profileData.name = editTextName.getText().toString().trim();
+        profileData.email = editTextEmail.getText().toString().trim();
+        profileData.contact_number = editTextContact.getText().toString().trim();
+        profileData.address = editTextAddress.getText().toString().trim();
+        profileData.dob = editTextDob.getText().toString().trim();
+
+        ApiService apiService = RetrofitClient.getRetrofitInstance().create(ApiService.class);
+        Call<ResponseBody> call = apiService.saveUserProfile(profileData);
+
+        call.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                if (response.isSuccessful()) {
+                    Toast.makeText(ProfileActivity.this, "Profile Saved Successfully", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(ProfileActivity.this, "Failed! Code: " + response.code(), Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                Toast.makeText(ProfileActivity.this, "Error: " + t.getMessage(), Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
+    private void setFocusListeners() {
+        editTextName.setOnFocusChangeListener((v, hasFocus) -> {
+            if (!hasFocus && TextUtils.isEmpty(editTextName.getText().toString().trim())) {
+                editTextName.setError("Name is required");
+            }
+        });
+
+        editTextEmail.setOnFocusChangeListener((v, hasFocus) -> {
+            String email = editTextEmail.getText().toString().trim();
+            if (!hasFocus && (TextUtils.isEmpty(email) || !Patterns.EMAIL_ADDRESS.matcher(email).matches())) {
+                editTextEmail.setError("Enter a valid email address");
+            }
+        });
+
+        editTextContact.setOnFocusChangeListener((v, hasFocus) -> {
+            String contact = editTextContact.getText().toString().trim();
+            if (!hasFocus && (TextUtils.isEmpty(contact) || contact.length() < 10)) {
+                editTextContact.setError("Enter a valid contact number (minimum 10 digits)");
+            }
+        });
+
+        editTextAddress.setOnFocusChangeListener((v, hasFocus) -> {
+            if (!hasFocus && TextUtils.isEmpty(editTextAddress.getText().toString().trim())) {
+                editTextAddress.setError("Address is required");
+            }
+        });
+
+        editTextDob.setOnFocusChangeListener((v, hasFocus) -> {
+            if (!hasFocus && TextUtils.isEmpty(editTextDob.getText().toString().trim())) {
+                editTextDob.setError("Date of Birth is required");
+            }
+        });
+    }
+}

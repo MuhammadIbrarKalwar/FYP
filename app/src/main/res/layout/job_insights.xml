@@ -1,10 +1,379 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".JobInsightsActivity">
+    android:padding="16dp"
+    android:background="#FFFFFF">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#FFFFFF">
+
+        <!-- Logo -->
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="224dp"
+            android:layout_height="71dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="@string/app_logo"
+            android:src="@drawable/sdrs" />
+
+        <!-- Title Row with Filter Button -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="🔍 Job Insights &amp; Search"
+                android:textSize="22sp"
+                android:textColor="#1565C0"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/btnFilterOptions"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:contentDescription="Advanced Filter Options"
+                android:background="?selectableItemBackgroundBorderless"
+                android:src="@android:drawable/ic_menu_preferences"
+                app:tint="#1565C0" />
+        </LinearLayout>
+
+        <!-- Filters Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardFilters"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="6dp"
+            app:cardCornerRadius="16dp"
+            android:layout_marginBottom="20dp"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🎯 Search Filters"
+                    android:textSize="18sp"
+                    android:textColor="#1565C0"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="16dp" />
+
+                <!-- Skills Filter -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Filter by Skills:"
+                    android:textSize="14sp"
+                    android:textColor="#333333"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipSkills"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:singleSelection="false"
+                    app:chipSpacing="8dp"
+                    android:layout_marginBottom="16dp">
+
+                    <com.google.android.material.chip.Chip
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Python"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:checkable="true" />
+
+                    <com.google.android.material.chip.Chip
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Java"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:checkable="true" />
+
+                    <com.google.android.material.chip.Chip
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="JavaScript"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:checkable="true" />
+
+                    <com.google.android.material.chip.Chip
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="React"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:checkable="true" />
+
+                    <com.google.android.material.chip.Chip
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Node.js"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:checkable="true" />
+
+                    <com.google.android.material.chip.Chip
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SQL"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:checkable="true" />
+
+                </com.google.android.material.chip.ChipGroup>
+
+                <!-- Job Type Filter -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Job Type:"
+                    android:textSize="14sp"
+                    android:textColor="#333333"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipJobType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:chipSpacing="8dp"
+                    app:singleSelection="false"
+                    android:layout_marginBottom="16dp">
+
+                    <com.google.android.material.chip.Chip
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Remote"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:checkable="true" />
+
+                    <com.google.android.material.chip.Chip
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Full-time"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:checkable="true" />
+
+                    <com.google.android.material.chip.Chip
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Part-time"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:checkable="true" />
+
+                    <com.google.android.material.chip.Chip
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Contract"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:checkable="true" />
+
+                    <com.google.android.material.chip.Chip
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Freelance"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:checkable="true" />
+
+                </com.google.android.material.chip.ChipGroup>
+
+                <!-- Experience Level -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Experience Level:"
+                    android:textSize="14sp"
+                    android:textColor="#333333"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp" />
+
+                <Spinner
+                    android:id="@+id/spinnerExperience"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="16dp"
+                    android:backgroundTint="#BDBDBD" />
+
+                <!-- Location -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Location:"
+                    android:textSize="14sp"
+                    android:textColor="#333333"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp" />
+
+                <Spinner
+                    android:id="@+id/spinnerLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="16dp"
+                    android:backgroundTint="#BDBDBD" />
+
+                <TextView
+                    android:id="@+id/tvSelectCountry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select Country"
+                    android:textSize="14sp"
+                    android:textColor="#333333"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"/>
+
+                <Spinner
+                    android:id="@+id/spinnerCountry"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="16dp"
+                    android:backgroundTint="#BDBDBD"
+                    android:spinnerMode="dropdown" />
+
+                <!-- Salary Range -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Expected Salary Range:"
+                    android:textSize="14sp"
+                    android:textColor="#333333"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.slider.RangeSlider
+                    android:id="@+id/salaryRangeSlider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:valueFrom="1000000"
+                    android:valueTo="2000000"
+                    android:stepSize="100000"
+                    app:thumbColor="#1565C0"
+                    app:trackColorActive="#1565C0"
+                    android:layout_marginBottom="20dp"
+                    android:contentDescription="Select salary range using the slider" />
+
+                <!-- Action Buttons -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <Button
+                        android:id="@+id/btnClearFilters"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:backgroundTint="#757575"
+                        android:text="Clear Filters"
+                        android:textColor="#FFFFFF" />
+
+                    <Button
+                        android:id="@+id/btnApplyFilters"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="#1565C0"
+                        android:text="Search Jobs"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Job Count -->
+        <TextView
+            android:id="@+id/textJobCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search for jobs using filters above"
+            android:textSize="16sp"
+            android:textColor="#1565C0"
+            android:textStyle="bold"
+            android:layout_marginBottom="12dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp" />
+
+        <!-- Progress Bar for loading state -->
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:layout_marginBottom="16dp" />
+
+        <!-- No Jobs Message -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardNoJobs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:visibility="gone"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="#FFF3E0">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="8dp"
+                    android:text="🔍"
+                    android:textSize="48sp" />
+
+                <TextView
+                    android:id="@+id/textNoJobs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="No jobs found matching your criteria."
+                    android:textColor="#FF8F00"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- RecyclerView for Job Results -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerJobResults"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            android:visibility="gone" />
+
+        <!-- Footer Information -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:text="💼 Job data powered by Adzuna API\n🔄 Results update in real-time"
+            android:textColor="#999999"
+            android:textSize="12sp"
+            android:textStyle="italic" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
