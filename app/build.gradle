@@ -53,30 +53,12 @@ dependencies {
     // Realm dependency from the local JAR (since it's being used locally)
     //implementation libs.realm.gradle.plugin  // Change version if you’re using a different one
 
-    //implementation libs.mongodb.atlas.sdk // VERSION ko latest se replace
+    //implementation libs.mongodb.atlas.sdk // VERSION ko latest se replace karein
     //implementation 'org.mongodb:mongodb-atlas-sdk-android:latest-version'
 
     implementation libs.retrofit
     implementation libs.converter.gson
     implementation libs.material.v160
-   // implementation libs.material
-   // implementation libs.material.v190
-    //implementation libs.material
-   // implementation libs.play.services.fonts
-
-    //implementation libs.material
-
-    //implementation libs.retrofit
-    //implementation libs.converter.gson
-    implementation libs.okhttp
-    implementation libs.logging.interceptor
-
-    // Retrofit
-   // implementation libs.retrofit
-    //implementation libs.converter.gson
-
-// Gson (Optional, but useful)
-    implementation libs.gson
 
 
 
