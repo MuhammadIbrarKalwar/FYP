@@ -88,7 +88,7 @@ public class JobInsightsActivity extends AppCompatActivity {
 
         // Spinners
         spinnerExperience = findViewById(R.id.spinnerExperience);
-        spinnerLocation = findViewById(R.id.spinnerLocation);
+       // spinnerLocation = findViewById(R.id.spinnerLocation);
         spinnerCountry = findViewById(R.id.spinnerCountry);
 
         // Slider
@@ -138,13 +138,13 @@ private void setupSpinners() {
             android.R.layout.simple_spinner_dropdown_item, experienceLevels);
     spinnerExperience.setAdapter(experienceAdapter);
 
-    String[] locations = {
-            "Any Location", "London", "Manchester", "Birmingham", "Edinburgh",
-            "Glasgow", "Liverpool", "Bristol", "Leeds", "Sheffield"
-    };
-    ArrayAdapter<String> locationAdapter = new ArrayAdapter<>(this,
-            android.R.layout.simple_spinner_dropdown_item, locations);
-    spinnerLocation.setAdapter(locationAdapter);
+//    String[] locations = {
+//            "Any Location", "London", "Manchester", "Birmingham", "Edinburgh",
+//            "Glasgow", "Liverpool", "Bristol", "Leeds", "Sheffield"
+//    };
+//    ArrayAdapter<String> locationAdapter = new ArrayAdapter<>(this,
+//            android.R.layout.simple_spinner_dropdown_item, locations);
+//    spinnerLocation.setAdapter(locationAdapter);
 
     ArrayAdapter<String> countryAdapter = new ArrayAdapter<>(this,
             android.R.layout.simple_spinner_item, Arrays.asList(countryNames));
@@ -207,24 +207,24 @@ private void setupSpinners() {
         List<String> selectedSkills = getSelectedSkills();
         List<String> selectedJobTypes = getSelectedJobTypes();
         String experience = spinnerExperience.getSelectedItem().toString();
-        String location = spinnerLocation.getSelectedItem().toString();
+        //String location = spinnerLocation.getSelectedItem().toString();
         List<Float> salaryRange = salaryRangeSlider.getValues();
 
         Log.d("JOB_INSIGHTS", "Selected skills: " + selectedSkills.toString());
         Log.d("JOB_INSIGHTS", "Selected job types: " + selectedJobTypes.toString());
         Log.d("JOB_INSIGHTS", "Experience level: " + experience);
-        Log.d("JOB_INSIGHTS", "Location: " + location);
+        //Log.d("JOB_INSIGHTS", "Location: " + location);
         Log.d("JOB_INSIGHTS", "Salary range: " + salaryRange.toString());
 
         // Build search query
         String searchQuery = buildSearchQuery(selectedSkills, selectedJobTypes);
-        String searchLocation = location.equals("Any Location") ? "" : location.toLowerCase();
+        //String searchLocation = location.equals("Any Location") ? "" : location.toLowerCase();
 
         Log.d("JOB_INSIGHTS", "Search query: " + searchQuery);
-        Log.d("JOB_INSIGHTS", "Search location: " + searchLocation);
+       // Log.d("JOB_INSIGHTS", "Search location: " + searchLocation);
 
         // Make API call
-        searchJobs(searchQuery, searchLocation);
+        searchJobs(searchQuery);
     }
 
     private List<String> getSelectedSkills() {
@@ -273,8 +273,8 @@ private void setupSpinners() {
         return query.toString();
     }
 
-    private void searchJobs(String query, String location) {
-        Log.d("JOB_INSIGHTS", "Searching jobs with query: '" + query + "', location: '" + location + "'");
+    private void searchJobs(String query) {
+      //  Log.d("JOB_INSIGHTS", "Searching jobs with query: '" + query + "', location: '" + location + "'");
 
         JobInsightRequest jobInsightRequest=new JobInsightRequest("gb","developer",1);
 

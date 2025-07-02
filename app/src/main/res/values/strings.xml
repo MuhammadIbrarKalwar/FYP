@@ -74,7 +74,7 @@
     <string name="option_4" translatable="false">Option 4</string>
     <string name="next" translatable="false">Next</string>
 
-    <string name="test_your_skills_instruction" translatable="false">Note: Test your computer skills by answering the questions below.</string>
+    <string name="test_your_skills_instruction" translatable="false">Note: Test your skills by answering the questions below.</string>
 
 
     <string name="question_placeholder" translatable="false">Question will appear here.</string>
