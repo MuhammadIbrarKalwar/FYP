@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 public class RetrofitClient {
     private static Retrofit retrofit;
     // Update this IP address to match your server 192.168.1.107
-    private static final String BASE_URL = "http://192.168.235.220:8000/api/";
+    private static final String BASE_URL = "http://192.168.75.220:8000/api/";
 
     public static Retrofit getRetrofitInstance() {
         if (retrofit == null) {
